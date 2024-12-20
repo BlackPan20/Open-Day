@@ -1,4 +1,4 @@
-<canvas id="ca" width="1920" height="1080" style="background-color: black;"></canvas>
+<canvas id="ca" width="1250" height="900" style="background-color: black;"></canvas>
 <script>
     let ctx = ca.getContext('2d');
     let p1 = 80;
@@ -17,10 +17,10 @@
 
     function draw() {
         ctx.fillStyle = 'green';
-        ctx.fillRect(0, 0, 720, 480);
-        ctx.fillStyle = 'white';
+        ctx.fillRect(0, 0, 1820, 900);
+        ctx.fillStyle = 'red';
         ctx.fillRect(10, p1, 10, 80);
-        ctx.fillRect(700, p2, 10, 80);
+        ctx.fillRect(1200, p2, 10, 80);
         ctx.fillRect(ball.x, ball.y, 10, 10);
         requestAnimationFrame(draw);
     }
@@ -44,7 +44,7 @@
         ball.x = ball.x + ball.speedX;
         ball.y = ball.y + ball.speedY;
 
-        if (ball.x < 20 || ball.x > 690) {
+        if (ball.x < 20 || ball.x > 1000) {
             if (ball.y > p1 && ball.y < p1 + 80 && ball.speedX < 0) {
                 ball.speedX = -ball.speedX;
                 ball.speedY = (ball.y - p1 - 40) * 0.1;
@@ -56,12 +56,12 @@
             }
         }
 
-        if(ball.y < 0 || ball.y > 480) {
+        if(ball.y < 0 || ball.y > 900) {
             ball.speedY = -ball.speedY;
         }
 
 
-        if (ball.x < 0 || ball.x > 720) {
+        if (ball.x < 0 || ball.x > 1250) {
             ball = {
                 x: 360,
                 y: 240,
